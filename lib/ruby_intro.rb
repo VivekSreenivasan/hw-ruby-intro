@@ -13,16 +13,29 @@ def sum(arr)
   return sum
 end
 
-puts sum([1,2,3,4,5])
-=begin
+
+
 def max_2_sum(arr)
-  # YOUR CODE HERE
+  largest = 0
+  length = arr.length-1
+  for i in 0..length-1
+    j = i+1
+    for j in 0..length
+      if arr[j] + arr[i] > largest
+        
+        largest = arr[j]+arr[i]
+      end
+    end
+  end
+  return largest
 end
+
+puts max_2_sum([1,2,3,4,5])
 
 def sum_to_n?(arr, n)
   return sum(arr) == n
 end
-
+=begin
 # Part 2
 
 def hello(name)
