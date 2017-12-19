@@ -13,8 +13,6 @@ def sum(arr)
   return sum
 end
 
-
-
 def max_2_sum(arr)
   largest = 0
   length = arr.length-1
