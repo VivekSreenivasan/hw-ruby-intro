@@ -33,13 +33,13 @@ end
 def sum_to_n?(arr, n)
   return sum(arr) == n
 end
-=begin
+
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
-
+=begin
 def starts_with_consonant?(s)
   # YOUR CODE HERE
 end
