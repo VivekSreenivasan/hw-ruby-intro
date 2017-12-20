@@ -51,7 +51,7 @@ def sum_to_n?(arr, n)
     end
   end
   return false
-  
+
 end
 
 # Part 2
@@ -59,11 +59,11 @@ end
 def hello(name)
   return "Hello, " + name
 end
-=begin
-def starts_with_consonant?(s)
-  # YOUR CODE HERE
-end
 
+def starts_with_consonant?(s)
+  vowels = "AEIOUaeiou"
+end
+=begin
 def binary_multiple_of_4?(s)
   # YOUR CODE HERE
 end
