@@ -14,7 +14,7 @@ def sum(arr)
 end
 
 def max_2_sum(arr)
-  largest = 0
+  largest = -10000000
   length = arr.length
   if length == 0
     return 0
@@ -24,13 +24,17 @@ def max_2_sum(arr)
   for i in 0..length-2
     j = i+1
     for j in 0..length-1
-      if arr[j] + arr[i] > largest
-        largest = arr[j] + arr[i]
+      unless j == i
+        if arr[j] + arr[i] > largest
+
+          largest = arr[j] + arr[i]
+        end
       end
     end
   end
   return largest
 end
+puts max_2_sum([1,-2,-3,-4,-5])
 
 def sum_to_n?(arr, n)
   largest = 0
@@ -39,14 +43,16 @@ def sum_to_n?(arr, n)
   for i in 0..length-2
     j = i+1
     for j in 0..length-1
-      if arr[j] + arr[i] == n
-        return true
+      unless j == i
+        if arr[j] + arr[i] == n
+          return true
+        end
       end
     end
   end
   return false
 end
-
+puts sum_to_n?([-1,-2,3,4,6,-8], 12)
 
 # Part 2
 
@@ -55,20 +61,26 @@ def hello(name)
 end
 
 def starts_with_consonant?(s)
-  vowels = "AEIOUaeiou"
-  return vowels.include? s[0]
-end
+  unless s == "" || !(s.match(/^[[:alpha:]]+$/))
+    vowels = "AEIOUaeiou"
 
 
-def binary_multiple_of_4?(s)
-  unless s == "0"
-      if s=~ /^[0-1]+$/
-        return s.to_i(2) % 4 == 0
-      end
+      return !(vowels.include? s[0])
+
   end
   return false
 end
 
+puts starts_with_consonant?("#ksjdfkajd;s")
+
+
+def binary_multiple_of_4?(s)
+  if s=~ /^[0-1]+$/
+    return s.to_i(2) % 4 == 0
+  end
+  return false
+end
+ puts binary_multiple_of_4?("0")
 
 # Part 3
 
